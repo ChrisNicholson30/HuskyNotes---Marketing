@@ -305,6 +305,7 @@ html[data-theme="light"] .icon--sun  { display: block; }
 
 /* ---------- pricing ---------- */
 .pricing { display: grid; grid-template-columns: repeat(2, minmax(0, 380px)); gap: 24px; justify-content: center; }
+.pricing--single { grid-template-columns: minmax(0, 440px); }
 .plan { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; position: relative; }
 .plan--featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow-sm); }
 .plan__badge { position: absolute; top: -13px; left: 32px; background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; }

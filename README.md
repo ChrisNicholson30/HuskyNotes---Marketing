@@ -93,15 +93,11 @@ Supporting claims: CommonMark + GFM · no account required · 100% open source �
 
 ## Pricing narrative
 
-No subscriptions. The app is free and fully usable; the extras are a **one-time** unlock.
+No subscriptions, no unlocks, no upsells. The app is **free forever** and every feature is included for everyone.
 
-### Husky Free — £0
+### Husky Notes — £0 (free forever)
 
-Unlimited notes & Markdown editor · iCloud sync · tags, smart lists & search · export to `.md` · Blue Husky & Husky Day themes.
-
-### Husky Pro — £24.99 (once, yours forever)
-
-Everything in Free, plus: continuous two-way `.md` mirror · full theme editor & custom themes · per-note locking & advanced export · attachments & image handling · supporting an open-source project.
+Unlimited notes & Markdown editor · iCloud sync · tags, smart lists & search · continuous two-way `.md` mirror · full theme editor & custom themes · per-note locking & advanced export · attachments & image handling · free & open source.
 
 -----
 
@@ -109,13 +105,13 @@ Everything in Free, plus: continuous two-way `.md` mirror · full theme editor &
 
 - Primary: **Download for Mac** / **Get it on the App Store**
 - Secondary: **View on GitHub** · **Read the architecture**
-- Sub-CTA line: *Free · Husky Pro one-time unlock · Open source*
+- Sub-CTA line: *Free forever · Every feature included · Open source*
 
 -----
 
 ## Requirements line (always include near downloads)
 
-> Requires iOS / iPadOS 18 or macOS 15. Free · Husky Pro optional.
+> Requires iOS / iPadOS 18 or macOS 15. Free forever · No subscriptions.
 
 -----
 
