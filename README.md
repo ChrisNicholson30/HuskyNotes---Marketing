@@ -1,6 +1,4 @@
------
-
-## title: Husky Notes — Brand & Content Overview
+Husky Notes — Brand & Content Overview
 tags: [husky-notes, brand, marketing, positioning, copy]
 type: brand-overview
 status: active
