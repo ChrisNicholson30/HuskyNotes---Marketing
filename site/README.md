@@ -46,7 +46,7 @@ No build step, no framework — just open `index.html`.
 
 > **Note:** Update the absolute URLs (canonical, `og:url`, image URLs, sitemap,
 > `robots.txt`) if the site is published on a domain other than
-> `https://husky-notes.pages.dev/`.
+> `https://huskynotes.com/`.
 
 ## Run locally
 
