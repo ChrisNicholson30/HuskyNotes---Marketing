@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Canonical host is the apex (https://huskynotes.com/).
+# 301 the www subdomain to the apex, preserving the rest of the path.
+# Requires www.huskynotes.com to be added as a custom domain on the Pages project.
+https://www.huskynotes.com/* https://huskynotes.com/:splat 301

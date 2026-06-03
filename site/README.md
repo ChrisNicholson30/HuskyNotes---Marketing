@@ -18,6 +18,7 @@ site/
 ├── sitemap.xml       # XML sitemap for search engines
 ├── site.webmanifest  # PWA / installable web app manifest
 ├── _headers          # Cloudflare Pages caching + security headers
+├── _redirects        # Cloudflare Pages www → apex 301 redirect
 └── assets/
     ├── logo.svg            # Husky head glyph (favicon + in-page <use>)
     ├── og-image.svg        # Social share image (source)
