@@ -1,0 +1,8 @@
+# Husky Notes — https://husky-notes.pages.dev/
+# Allow all well-behaved crawlers full access.
+User-agent: *
+Allow: /
+
+# Block nothing — this is a public marketing site.
+
+Sitemap: https://husky-notes.pages.dev/sitemap.xml

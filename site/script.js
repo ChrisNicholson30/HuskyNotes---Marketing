@@ -4,19 +4,17 @@
 
   var root = document.documentElement;
 
-  /* ---- theme: respect saved choice, else system preference ---- */
+  /* ---- theme: respect saved choice, else system preference ----
+     (initial theme is applied by an inline script in <head> to avoid a flash;
+     here we keep the browser UI colour in sync once a manual choice is made) ---- */
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', theme === 'light' ? '#F4F8FB' : '#0B1622');
-  }
-
-  var saved = null;
-  try { saved = localStorage.getItem('husky-theme'); } catch (e) {}
-  if (saved) {
-    applyTheme(saved);
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    applyTheme('light');
+    var color = theme === 'light' ? '#F4F8FB' : '#0B1622';
+    var metas = document.querySelectorAll('meta[name="theme-color"]');
+    metas.forEach(function (m) {
+      m.removeAttribute('media'); // manual choice should override system preference
+      m.setAttribute('content', color);
+    });
   }
 
   var toggle = document.getElementById('themeToggle');

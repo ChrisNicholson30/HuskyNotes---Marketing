@@ -2,22 +2,157 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Husky Notes — Markdown notes you'll love, sync you can trust</title>
-  <meta name="description" content="Husky Notes is a native, open-source note-taking app for iPhone, iPad and Mac. Markdown at heart, beautiful themeable rendering, and rock-solid iCloud sync. Your data stays yours." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- Primary meta -->
+  <title>Husky Notes — Markdown Notes App for iPhone, iPad &amp; Mac</title>
+  <meta name="description" content="Husky Notes is a free, open-source Markdown note-taking app for iPhone, iPad and Mac. Beautiful native editor, private iCloud sync, themeable design, and .md export — your data stays yours, forever." />
+  <link rel="canonical" href="https://husky-notes.pages.dev/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Husky Notes" />
+  <meta name="application-name" content="Husky Notes" />
+  <meta name="keywords" content="Markdown notes app, note-taking app, iPhone notes, iPad notes, Mac notes, open source notes, iCloud sync, Obsidian alternative, Bear alternative, plain text notes, private notes app" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0B1622" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F4F8FB" media="(prefers-color-scheme: light)" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Husky Notes — Markdown notes you'll love" />
-  <meta property="og:description" content="A native, open-source note-taking app for iPhone, iPad and Mac. Obsidian's openness, Bear's craft, a signature Blue Husky theme." />
-  <meta property="og:image" content="assets/og-image.svg" />
-  <meta name="theme-color" content="#0B1622" />
+  <meta property="og:site_name" content="Husky Notes" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="https://husky-notes.pages.dev/" />
+  <meta property="og:title" content="Husky Notes — Markdown Notes App for iPhone, iPad &amp; Mac" />
+  <meta property="og:description" content="A free, open-source note-taking app for Apple platforms. Obsidian's openness, Bear's craft, private iCloud sync, and a signature Blue Husky theme." />
+  <meta property="og:image" content="https://husky-notes.pages.dev/assets/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Husky Notes — Markdown notes you'll love, sync you can trust." />
 
+  <!-- Twitter / X cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Husky Notes — Markdown Notes App for iPhone, iPad &amp; Mac" />
+  <meta name="twitter:description" content="A free, open-source note-taking app for Apple platforms. Markdown at heart, private iCloud sync, beautiful themes." />
+  <meta name="twitter:image" content="https://husky-notes.pages.dev/assets/og-image.png" />
+  <meta name="twitter:image:alt" content="Husky Notes — Markdown notes you'll love, sync you can trust." />
+
+  <!-- Icons & PWA -->
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Husky Notes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Performance: prevent theme flash before CSS/JS, run inline & early -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('husky-theme');
+        if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Performance: fonts loaded non-render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://husky-notes.pages.dev/#organization",
+        "name": "Husky Notes",
+        "url": "https://husky-notes.pages.dev/",
+        "logo": "https://husky-notes.pages.dev/assets/icon-512.png",
+        "sameAs": ["https://github.com/ChrisNicholson30/HuskyNotes"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://husky-notes.pages.dev/#website",
+        "url": "https://husky-notes.pages.dev/",
+        "name": "Husky Notes",
+        "description": "Free, open-source Markdown note-taking app for iPhone, iPad and Mac.",
+        "publisher": { "@id": "https://husky-notes.pages.dev/#organization" },
+        "inLanguage": "en-GB"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Husky Notes",
+        "operatingSystem": "iOS 18, iPadOS 18, macOS 15",
+        "applicationCategory": "ProductivityApplication",
+        "url": "https://husky-notes.pages.dev/",
+        "image": "https://husky-notes.pages.dev/assets/og-image.png",
+        "description": "A native, open-source note-taking app for iPhone, iPad and Mac. Markdown at heart, private iCloud sync, themeable rendering, and first-class .md export.",
+        "isAccessibleForFree": true,
+        "license": "https://opensource.org/licenses/MIT",
+        "softwareVersion": "0.2",
+        "publisher": { "@id": "https://husky-notes.pages.dev/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+          "Live native Markdown editor (CommonMark + GFM)",
+          "Private iCloud sync across iPhone, iPad and Mac",
+          "Beautiful, customisable themes",
+          "Inline tags and automatic smart lists",
+          "Instant full-text search",
+          "Two-way .md file mirror with YAML frontmatter"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://husky-notes.pages.dev/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Husky Notes really free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Husky Notes is free forever with every feature included — no subscriptions, no unlocks, no upsells." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which devices does Husky Notes support?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Husky Notes is native for iPhone, iPad and Mac. It requires iOS or iPadOS 18, or macOS 15 or later." }
+          },
+          {
+            "@type": "Question",
+            "name": "Where are my notes stored and is Husky Notes private?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Your notes live in your own private iCloud database, scoped to your Apple ID and encrypted in transit and at rest. There is no Husky server and no account to create — we never see a word you write." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I export my notes or move them to another app?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every note is plain Markdown. One toggle continuously mirrors your notes to real .md files with YAML frontmatter, so you can drop them straight into Obsidian or any editor. Your data is never trapped." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Husky Notes open source?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Husky Notes is fully open source under the MIT license. You can read the code, audit the sync, file issues, or build it yourself on GitHub." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Husky Notes work offline?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Husky Notes is offline-first — keep writing with no connection and it syncs automatically through iCloud when you're back online." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -97,7 +232,7 @@
                 <div class="app-sidebar__item">#husky</div>
               </aside>
               <div class="app-editor">
-                <h2 class="md-h1">Welcome to Husky Notes 🐺</h2>
+                <p class="md-h1">Welcome to Husky Notes 🐺</p>
                 <p class="md-p">A note is just <span class="md-code">Markdown</span> — nothing trapped, nothing proprietary.</p>
                 <p class="md-p md-quote">Obsidian's openness · Bear's reliability.</p>
                 <ul class="md-list">
@@ -197,12 +332,12 @@
             <li>Distraction-free focus mode</li>
           </ul>
         </div>
-        <div class="split__art">
+        <div class="split__art" aria-hidden="true">
           <div class="device device--mac">
             <div class="device__bar"><span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span><span class="device__title">release-notes.md</span></div>
             <div class="device__body device__body--full">
               <div class="app-editor app-editor--wide">
-                <h2 class="md-h1"># Release notes</h2>
+                <p class="md-h1"># Release notes</p>
                 <p class="md-p"><span class="md-syntax">##</span> <span class="md-h2">v0.2 — Sync</span></p>
                 <p class="md-p">CloudKit mirroring is <span class="md-bold">live</span>. Multi-device, offline-first.</p>
                 <pre class="md-pre"><span class="md-syntax">```swift</span>
@@ -374,6 +509,44 @@ let store = ModelContainer(
       </div>
     </section>
 
+    <!-- ===================== FAQ ===================== -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions, answered</h2>
+          <p>Everything you might want to know before you start writing in Husky Notes.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary>Is Husky Notes really free?</summary>
+            <p>Yes. Husky Notes is free forever with every feature included — no subscriptions, no unlocks, no upsells. The complete app is free for everyone.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Which devices does Husky Notes support?</summary>
+            <p>Husky Notes is native for iPhone, iPad and Mac. It requires iOS or iPadOS&nbsp;18, or macOS&nbsp;15 or later.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Where are my notes stored, and is Husky Notes private?</summary>
+            <p>Your notes live in your own private iCloud database, scoped to your Apple ID and encrypted in transit and at rest. There's no Husky server and no account to create — we never see a word you write.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can I export my notes or move them to another app?</summary>
+            <p>Yes. Every note is plain Markdown. One toggle continuously mirrors your notes to real <span class="md-code">.md</span> files with YAML frontmatter, so you can drop them straight into Obsidian or any editor. Your data is never trapped.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Is Husky Notes open source?</summary>
+            <p>Yes. Husky Notes is fully open source under the MIT license. You can read the code, audit the sync, file issues, or build it yourself on <a href="https://github.com/ChrisNicholson30/HuskyNotes" target="_blank" rel="noopener">GitHub</a>.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Does Husky Notes work offline?</summary>
+            <p>Yes. Husky Notes is offline-first — keep writing with no connection and it syncs automatically through iCloud when you're back online.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== DOWNLOAD CTA ===================== -->
     <section class="cta" id="download">
       <div class="container cta__inner">
@@ -410,6 +583,7 @@ let store = ModelContainer(
         <a href="#themes">Themes</a>
         <a href="#sync">Sync &amp; privacy</a>
         <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <nav class="footer__col" aria-label="Open source">
         <h4>Open source</h4>
@@ -432,6 +606,6 @@ let store = ModelContainer(
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

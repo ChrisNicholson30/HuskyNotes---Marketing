@@ -1,0 +1,32 @@
+{
+  "name": "Husky Notes",
+  "short_name": "Husky Notes",
+  "description": "A free, open-source Markdown note-taking app for iPhone, iPad and Mac.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B1622",
+  "theme_color": "#0B1622",
+  "lang": "en-GB",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
