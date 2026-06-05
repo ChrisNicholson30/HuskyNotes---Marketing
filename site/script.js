@@ -53,7 +53,7 @@
 
   /* ---- reveal-on-scroll ---- */
   var revealEls = document.querySelectorAll(
-    '.card, .theme-card, .plan, .split__copy, .split__art, .open__inner, .section__head, .stat'
+    '.card, .theme-card, .split__copy, .split__art, .open__inner, .section__head, .stat'
   );
   revealEls.forEach(function (el) { el.classList.add('reveal'); });
 
