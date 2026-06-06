@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- Primary meta -->
+  <title>Privacy Policy — Husky Notes</title>
+  <meta name="description" content="Husky Notes' Privacy Policy. We never see your notes — no servers, no accounts, no analytics on your content. Your data is yours, forever." />
+  <link rel="canonical" href="https://huskynotes.com/privacypolicy" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="author" content="Husky Notes" />
+  <meta name="application-name" content="Husky Notes" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0B1622" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F4F8FB" media="(prefers-color-scheme: light)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Husky Notes" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="https://huskynotes.com/privacypolicy" />
+  <meta property="og:title" content="Privacy Policy — Husky Notes" />
+  <meta property="og:description" content="We never see your notes — no servers, no accounts, no analytics on your content. Your data is yours, forever." />
+  <meta property="og:image" content="https://huskynotes.com/assets/og-image.png" />
+
+  <!-- Icons & PWA -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Performance: prevent theme flash before CSS/JS, run inline & early -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('husky-theme');
+        if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Performance: fonts loaded non-render-blocking -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- page-scoped styles for long-form legal content -->
+  <style>
+    .legal { padding: 56px 0 96px; }
+    .legal__head { max-width: 760px; margin: 0 auto 8px; }
+    .legal__head .eyebrow { margin-bottom: 14px; }
+    .legal__head h1 { font-size: clamp(30px, 5vw, 46px); letter-spacing: -.025em; line-height: 1.05; margin-bottom: 12px; }
+    .legal__updated { color: var(--text-2); font-size: 13px; font-family: var(--mono); }
+    .legal__body { max-width: 760px; margin: 28px auto 0; }
+    .legal__body h2 { font-size: clamp(19px, 2.6vw, 23px); letter-spacing: -.01em; margin: 44px 0 12px; }
+    .legal__body p { color: var(--text-2); font-size: 16px; line-height: 1.72; margin-bottom: 14px; }
+    .legal__lead { font-size: 18px; color: var(--text); line-height: 1.7; }
+    .legal__body ul { margin: 0 0 18px; padding-left: 22px; display: grid; gap: 9px; }
+    .legal__body li { color: var(--text-2); font-size: 16px; line-height: 1.6; }
+    .legal__body a { color: var(--accent); }
+    .legal__body a:hover { text-decoration: underline; }
+    .legal__body strong { color: var(--text); font-weight: 600; }
+    .legal__callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius-sm); padding: 18px 20px; margin: 24px 0 8px; }
+    .legal__callout p { color: var(--text); font-size: 16.5px; margin: 0; }
+    .legal hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="brand" href="/" aria-label="Husky Notes home">
+        <span class="brand__mark" aria-hidden="true">
+          <!-- husky head logo -->
+          <img src="assets/husky-logo.png" width="32" height="32" alt="" decoding="async" />
+        </span>
+        <span class="brand__name">Husky&nbsp;Notes</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#themes">Themes</a>
+        <a href="/#sync">Sync</a>
+        <a href="/#open">Open source</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+          <svg class="icon icon--moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon icon--sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+        </button>
+        <a class="btn btn--primary nav__cta" href="/#download">Download</a>
+        <button class="nav__burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="legal">
+      <div class="container">
+        <div class="legal__head">
+          <span class="eyebrow">Legal</span>
+          <h1>Privacy Policy</h1>
+          <p class="legal__updated">Husky Notes · Last updated: 6 June 2026</p>
+        </div>
+
+        <div class="legal__body">
+          <p class="legal__lead">
+            Husky Notes (&ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is a free, open-source
+            Markdown note-taking app for iPhone, iPad and Mac. This Privacy Policy explains what information the app and this
+            website do and do not collect, how it is handled, and your rights.
+          </p>
+
+          <div class="legal__callout">
+            <p><strong>The short version:</strong> we never see your notes. Husky Notes has no servers, no accounts, and no analytics on your content. Your data is yours, forever.</p>
+          </div>
+
+          <h2>1. Who we are</h2>
+          <p>
+            Husky Notes is designed and built by <strong>CN-DESIGN LTD</strong> (&ldquo;the developer&rdquo;). For any privacy
+            questions, contact us at <a href="mailto:contact@huskynotes.com">contact@huskynotes.com</a>.
+          </p>
+
+          <h2>2. Your notes and your data</h2>
+          <p>We do not collect, store, transmit, or have access to your notes.</p>
+          <ul>
+            <li>All notes are stored locally on your device and, if you enable iCloud sync, in your own private iCloud database, scoped to your Apple ID.</li>
+            <li>Your notes are encrypted in transit and at rest by Apple's iCloud infrastructure.</li>
+            <li>There is no Husky Notes server. Your data never passes through, or is stored on, any system we operate or control.</li>
+            <li>There is no account to create. We do not ask for, collect, or hold any login credentials, email address, or identity information to use the app.</li>
+            <li>Sync is handled entirely between your devices and your private iCloud account via Apple's CloudKit. We cannot read, access, or recover your notes.</li>
+          </ul>
+          <p>
+            Because we have no access to your content, we cannot retrieve, restore, or delete notes on your behalf. Managing your
+            notes and your iCloud data is entirely within your control.
+          </p>
+
+          <h2>3. Markdown export</h2>
+          <p>
+            Husky Notes can continuously mirror your notes to plain <span class="md-code">.md</span> files (with YAML frontmatter)
+            on your device or in your iCloud Drive, so you can use them in other apps such as Obsidian. These files are created and
+            managed locally by you. We have no visibility into, or access to, exported files.
+          </p>
+
+          <h2>4. iCloud and Apple</h2>
+          <p>
+            Husky Notes uses Apple's iCloud (CloudKit) to sync your notes between your devices. This processing is governed by
+            Apple's Privacy Policy and iCloud terms, not by us. We receive no personal data from Apple about your iCloud usage or
+            content. If you choose not to enable iCloud sync, your notes remain only on your device.
+          </p>
+
+          <h2>5. Optional device security</h2>
+          <p>
+            Husky Notes offers an optional Face ID / Touch ID app lock. Biometric authentication is handled entirely by Apple on
+            your device. We never receive, store, or have access to your biometric data.
+          </p>
+
+          <h2>6. Analytics, tracking and advertising</h2>
+          <ul>
+            <li>Husky Notes contains no third-party analytics or tracking SDKs that monitor your content or behaviour inside the app.</li>
+            <li>We do not display advertising.</li>
+            <li>We do not sell, rent, or share personal information — because we do not collect it.</li>
+            <li>We do not use your notes for training machine-learning models or any other purpose.</li>
+          </ul>
+          <p>
+            We may receive anonymous, aggregated crash and usage statistics from Apple's App Analytics. This data is not linked to
+            your identity and never includes the content of your notes. You can opt out in your device's Privacy settings under
+            &ldquo;Share With App Developers&rdquo;.
+          </p>
+
+          <h2>7. This website (huskynotes.com)</h2>
+          <p>
+            This website is informational. We do not use cookies for tracking, and we do not run third-party advertising or
+            analytics that profile you. Standard server logs may be retained by our hosting provider for security and operational
+            purposes; these are not used to identify individual visitors.
+          </p>
+          <p>
+            If you contact us by email, we use your message and email address solely to respond to you, and retain it only as long
+            as necessary for that purpose.
+          </p>
+
+          <h2>8. Children's privacy</h2>
+          <p>
+            Husky Notes is not directed at children under 13, and we do not knowingly collect personal information from anyone. As
+            the app collects no personal data, it can be used by people of any age in accordance with Apple's App Store terms.
+          </p>
+
+          <h2>9. Open source</h2>
+          <p>
+            Husky Notes is fully open source under the MIT license. You are welcome to read the code, audit how sync and storage
+            work, and verify these privacy claims for yourself at
+            <a href="https://github.com/ChrisNicholson30/HuskyNotes" target="_blank" rel="noopener">github.com/ChrisNicholson30/HuskyNotes</a>.
+          </p>
+
+          <h2>10. Your rights</h2>
+          <p>
+            Depending on where you live, you may have rights under data-protection laws such as the UK GDPR, EU GDPR, or the
+            California Consumer Privacy Act (CCPA) — including rights to access, correct, or delete personal data held about you.
+          </p>
+          <p>
+            Because Husky Notes does not collect or hold any personal data about you, in most cases there is nothing for us to
+            access, correct, or erase. Your notes are under your own control via your device and your iCloud account. If you believe
+            we hold any personal information about you (for example, an email you sent us), contact us and we will address your
+            request.
+          </p>
+
+          <h2>11. Changes to this policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. Material changes will be reflected by an updated &ldquo;Last
+            updated&rdquo; date at the top of this page. Continued use of the app or website after changes take effect constitutes
+            acceptance of the revised policy.
+          </p>
+
+          <h2>12. Contact</h2>
+          <p>
+            Questions about this policy or your privacy?<br />
+            <strong>CN-DESIGN LTD</strong><br />
+            Email: <a href="mailto:contact@huskynotes.com">contact@huskynotes.com</a><br />
+            Website: <a href="https://huskynotes.com">huskynotes.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="brand" href="/">
+          <span class="brand__mark" aria-hidden="true"><img src="assets/husky-logo.png" width="28" height="28" alt="" decoding="async" /></span>
+          <span class="brand__name">Husky Notes</span>
+        </a>
+        <p>Markdown notes you'll love, sync you can trust. Made for the Apple platforms.</p>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <h4>Product</h4>
+        <a href="/#features">Features</a>
+        <a href="/#themes">Themes</a>
+        <a href="/#sync">Sync &amp; privacy</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <nav class="footer__col" aria-label="Open source">
+        <h4>Open source</h4>
+        <a href="https://github.com/ChrisNicholson30/HuskyNotes" target="_blank" rel="noopener">GitHub</a>
+        <a href="/#open">Architecture</a>
+        <a href="/#open">Export &amp; data</a>
+        <a href="/#open">License (MIT)</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="#">Blog</a>
+        <a href="/privacypolicy">Privacy</a>
+        <a href="#">Press kit</a>
+        <a href="mailto:contact@huskynotes.com">Contact</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Husky Notes. Built with 🐺 in SwiftUI. Designed &amp; built by <a href="https://cn-design.co.uk" target="_blank" rel="noopener">CN-DESIGN LTD</a>.</span>
+      <span class="footer__legal"><a href="/privacypolicy">Privacy</a> · <a href="#">Terms</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

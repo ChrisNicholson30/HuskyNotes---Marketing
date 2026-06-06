@@ -11,4 +11,10 @@
       <image:title>Husky Notes — Markdown notes you'll love, sync you can trust</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://huskynotes.com/privacypolicy</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
