@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- Primary meta -->
+  <title>Support &amp; Help — Husky Notes</title>
+  <meta name="description" content="Get help with Husky Notes — setup, iCloud sync troubleshooting, Markdown export, themes, privacy and more. Still stuck? Email contact@huskynotes.com." />
+  <link rel="canonical" href="https://huskynotes.com/support" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="author" content="Husky Notes" />
+  <meta name="application-name" content="Husky Notes" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0B1622" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F4F8FB" media="(prefers-color-scheme: light)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Husky Notes" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="https://huskynotes.com/support" />
+  <meta property="og:title" content="Support &amp; Help — Husky Notes" />
+  <meta property="og:description" content="Setup, iCloud sync troubleshooting, Markdown export, themes and privacy — plus how to reach us if you're still stuck." />
+  <meta property="og:image" content="https://huskynotes.com/assets/og-image.png" />
+
+  <!-- Icons & PWA -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Performance: prevent theme flash before CSS/JS, run inline & early -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('husky-theme');
+        if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Performance: fonts loaded non-render-blocking -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- page-scoped styles for the support layout -->
+  <style>
+    .support { padding: 56px 0 40px; }
+    .support__head { max-width: 720px; margin: 0 auto; text-align: center; }
+    .support__head .eyebrow { margin-bottom: 14px; }
+    .support__head h1 { font-size: clamp(30px, 5vw, 46px); letter-spacing: -.025em; line-height: 1.05; margin-bottom: 14px; }
+    .support__head p { color: var(--text-2); font-size: 17px; max-width: 40em; margin: 0 auto; }
+
+    /* quick contact cards */
+    .support__cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; max-width: 760px; margin: 40px auto 0; }
+    .support-card { display: flex; flex-direction: column; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: border-color .2s ease, transform .2s ease; }
+    .support-card:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); transform: translateY(-2px); }
+    .support-card__icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 11px; background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent); margin-bottom: 4px; }
+    .support-card__icon svg { width: 22px; height: 22px; }
+    .support-card h3 { font-size: 17px; }
+    .support-card p { color: var(--text-2); font-size: 14.5px; line-height: 1.55; margin: 0; }
+    .support-card a.support-card__link { color: var(--accent); font-weight: 600; font-size: 14.5px; margin-top: 2px; }
+    .support-card a.support-card__link:hover { text-decoration: underline; }
+
+    /* topic groups reuse .faq accordions */
+    .help { padding: 24px 0 40px; }
+    .help__group { max-width: 760px; margin: 0 auto; }
+    .help__group + .help__group { margin-top: 44px; }
+    .help__group > h2 { font-size: clamp(20px, 2.8vw, 26px); letter-spacing: -.01em; margin-bottom: 6px; }
+    .help__group > .help__intro { color: var(--text-2); font-size: 15px; margin-bottom: 18px; }
+    .help .faq__item ol, .help .faq__item ul { margin: 2px 0 18px; padding-left: 22px; display: grid; gap: 7px; max-width: 64ch; }
+    .help .faq__item li { color: var(--text-2); font-size: 15.5px; line-height: 1.55; }
+    .help .faq__item li::marker { color: var(--text-2); }
+    .help .faq__item a { color: var(--accent); font-weight: 600; }
+
+    @media (max-width: 620px) {
+      .support__cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="brand" href="/" aria-label="Husky Notes home">
+        <span class="brand__mark" aria-hidden="true">
+          <!-- husky head logo -->
+          <img src="assets/husky-logo.png" width="32" height="32" alt="" decoding="async" />
+        </span>
+        <span class="brand__name">Husky&nbsp;Notes</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#themes">Themes</a>
+        <a href="/#sync">Sync</a>
+        <a href="/#open">Open source</a>
+        <a href="/support">Support</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+          <svg class="icon icon--moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon icon--sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+        </button>
+        <a class="btn btn--primary nav__cta" href="/#download">Download</a>
+        <button class="nav__burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== HEADER ===================== -->
+    <section class="support">
+      <div class="container">
+        <div class="support__head">
+          <span class="eyebrow">Support</span>
+          <h1>How can we help?</h1>
+          <p>Stuck on something? Most answers are below — setup, iCloud sync, export, themes and privacy. If you can't find what you need, we're a quick email away.</p>
+        </div>
+
+        <div class="support__cards">
+          <div class="support-card">
+            <span class="support-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            </span>
+            <h3>Email support</h3>
+            <p>Questions, account-free help, or anything we haven't covered. We read every message.</p>
+            <a class="support-card__link" href="mailto:contact@huskynotes.com?subject=Husky%20Notes%20support">contact@huskynotes.com</a>
+          </div>
+          <div class="support-card">
+            <span class="support-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+            </span>
+            <h3>Report a bug or request a feature</h3>
+            <p>Husky Notes is open source. File an issue and track it in the open on GitHub.</p>
+            <a class="support-card__link" href="https://github.com/ChrisNicholson30/HuskyNotes/issues" target="_blank" rel="noopener">github.com/ChrisNicholson30/HuskyNotes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HELP TOPICS ===================== -->
+    <section class="help">
+      <div class="container">
+
+        <!-- Getting started -->
+        <div class="help__group">
+          <h2>Getting started</h2>
+          <p class="help__intro">New to Husky Notes? Here's everything to get writing in a couple of minutes.</p>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>How do I install Husky Notes?</summary>
+              <p>Download Husky Notes from the App Store on your iPhone or iPad, or from the Mac App Store on your Mac. It's free, with every feature included — no account or sign-up required.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Do I need to create an account?</summary>
+              <p>No. There's no Husky Notes account, password, or login. To sync across devices, simply sign in to <strong>iCloud</strong> on each device with the same Apple ID — that's all the setup there is.</p>
+            </details>
+            <details class="faq__item">
+              <summary>What are the system requirements?</summary>
+              <p>Husky Notes is native for iPhone, iPad and Mac and requires <strong>iOS or iPadOS&nbsp;18</strong>, or <strong>macOS&nbsp;15</strong> or later. Older versions aren't supported.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Sync & iCloud -->
+        <div class="help__group">
+          <h2>Sync &amp; iCloud</h2>
+          <p class="help__intro">Sync runs through your own private iCloud (CloudKit) — there's no Husky server in the middle. Most sync hiccups are quick to fix.</p>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>My notes aren't syncing between devices</summary>
+              <p>Sync relies on iCloud, so work through these in order — it resolves the vast majority of cases:</p>
+              <ol>
+                <li>Make sure every device is signed in to iCloud with the <strong>same Apple ID</strong> (Settings → your name on iOS; System Settings → your name on Mac).</li>
+                <li>Check that <strong>iCloud Drive</strong> is turned on, and that iCloud is enabled for Husky Notes in your iCloud settings.</li>
+                <li>Confirm each device has a working internet connection — sync pauses offline and resumes automatically when you're back online.</li>
+                <li>Give it a moment. The first sync after install, or a large change, can take a little time to propagate.</li>
+                <li>Fully quit and reopen Husky Notes on both devices to nudge a fresh sync.</li>
+                <li>Check <a href="https://www.apple.com/support/systemstatus/" target="_blank" rel="noopener">Apple's System Status page</a> — if iCloud is having an outage, sync will catch up once it clears.</li>
+              </ol>
+              <p>Still not syncing after all of that? <a href="mailto:contact@huskynotes.com?subject=Sync%20issue">Email us</a> with your device and OS versions and we'll help dig in.</p>
+            </details>
+            <details class="faq__item">
+              <summary>I signed in on a new device and my notes aren't there yet</summary>
+              <p>On a fresh device, the initial download from iCloud can take a few minutes depending on how many notes you have and your connection. Make sure you're on the same Apple ID, keep the app open, and stay connected to Wi-Fi while it catches up.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Does Husky Notes work offline?</summary>
+              <p>Yes — Husky Notes is offline-first. Keep writing with no connection at all, and your changes sync automatically through iCloud the next time you're online.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Where exactly are my notes stored?</summary>
+              <p>In your own private iCloud database, scoped to your Apple ID and encrypted in transit and at rest by Apple. There's no Husky Notes server, and we can't read, access, or recover your notes. See our <a href="/privacypolicy">Privacy Policy</a> for the full picture.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Notes, Markdown & editing -->
+        <div class="help__group">
+          <h2>Notes, Markdown &amp; editing</h2>
+          <p class="help__intro">Everything is plain Markdown, rendered live as you type.</p>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>Which Markdown is supported?</summary>
+              <p>Husky Notes uses a live, native Markdown editor supporting CommonMark and GitHub-Flavored Markdown (GFM) — headings, lists, links, code, tables, task lists and more, rendered as you write.</p>
+            </details>
+            <details class="faq__item">
+              <summary>How do tags and lists work?</summary>
+              <p>Add inline <span class="md-code">#tags</span> anywhere in a note to organise and filter, and use smart lists that continue automatically as you type. Tags make it easy to group related notes without folders.</p>
+            </details>
+            <details class="faq__item">
+              <summary>How do I search my notes?</summary>
+              <p>Use the built-in instant full-text search to jump to any note by its content or tags. It searches across everything, including synced notes from your other devices.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Can I add images or attachments?</summary>
+              <p>Yes. Husky Notes supports attachments and inline image handling, so you can keep visuals alongside your writing.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Export & .md files -->
+        <div class="help__group">
+          <h2>Export &amp; <span class="md-code">.md</span> files</h2>
+          <p class="help__intro">Your notes are never locked in — they're real Markdown files you control.</p>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>How do I export my notes?</summary>
+              <p>Turn on the continuous Markdown mirror to keep a live two-way set of plain <span class="md-code">.md</span> files (with YAML frontmatter) on your device or in iCloud Drive. You can also export individual notes whenever you like — every note is plain text underneath.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Can I use my notes in Obsidian or another app?</summary>
+              <p>Absolutely. Because the mirror produces standard Markdown with YAML frontmatter, you can point Obsidian (or any editor) straight at the folder. Edits flow both ways, so your data is never trapped.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Where are the exported files kept?</summary>
+              <p>Wherever you choose — locally on your device or in your iCloud Drive. The files are created and managed by you; we have no visibility into or access to them.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Themes & appearance -->
+        <div class="help__group">
+          <h2>Themes &amp; appearance</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>How do I change the theme?</summary>
+              <p>Husky Notes ships with beautiful built-in themes and a full theme editor, so you can fine-tune colours and typography or build your own. Light and dark modes are both supported and follow your system preference by default.</p>
+            </details>
+            <details class="faq__item">
+              <summary>This website's light/dark mode</summary>
+              <p>Use the sun/moon toggle in the top-right of any page to switch this site between light and dark. Your choice is remembered on your device.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Privacy, security & your data -->
+        <div class="help__group">
+          <h2>Privacy, security &amp; your data</h2>
+          <div class="faq">
+            <details class="faq__item">
+              <summary>Can you recover or restore notes for me?</summary>
+              <p>Because we never have access to your content, we can't retrieve, restore, or delete notes on your behalf — your notes live entirely in your own iCloud account. Keeping iCloud enabled (and, optionally, the Markdown mirror) is the best way to make sure you always have a copy under your control.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Is there an app lock?</summary>
+              <p>Yes. Husky Notes offers an optional Face ID / Touch ID app lock. Biometric authentication is handled entirely by Apple on your device — we never receive or store your biometric data.</p>
+            </details>
+            <details class="faq__item">
+              <summary>How private is Husky Notes really?</summary>
+              <p>We never see your notes. There are no servers we operate, no accounts, and no analytics on your content. You can read exactly how it works in our open-source code and in the <a href="/privacypolicy">Privacy Policy</a>.</p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== STILL STUCK CTA ===================== -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <span class="brand__mark brand__mark--lg" aria-hidden="true">
+          <img src="assets/husky-logo.png" width="56" height="56" alt="" decoding="async" />
+        </span>
+        <h2>Still stuck?</h2>
+        <p>We're happy to help. Drop us an email with your device and OS version plus a quick description, and we'll get you sorted.</p>
+        <div class="cta__buttons">
+          <a class="btn btn--primary btn--lg" href="mailto:contact@huskynotes.com?subject=Husky%20Notes%20support">Email contact@huskynotes.com</a>
+          <a class="btn btn--light btn--lg" href="https://github.com/ChrisNicholson30/HuskyNotes/issues" target="_blank" rel="noopener">Open a GitHub issue</a>
+        </div>
+        <p class="cta__note">Tip: include the exact steps that led to the problem so we can reproduce it quickly.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="brand" href="/">
+          <span class="brand__mark" aria-hidden="true"><img src="assets/husky-logo.png" width="28" height="28" alt="" decoding="async" /></span>
+          <span class="brand__name">Husky Notes</span>
+        </a>
+        <p>Markdown notes you'll love, sync you can trust. Made for the Apple platforms.</p>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <h4>Product</h4>
+        <a href="/#features">Features</a>
+        <a href="/#themes">Themes</a>
+        <a href="/#sync">Sync &amp; privacy</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <nav class="footer__col" aria-label="Open source">
+        <h4>Open source</h4>
+        <a href="https://github.com/ChrisNicholson30/HuskyNotes" target="_blank" rel="noopener">GitHub</a>
+        <a href="/#open">Architecture</a>
+        <a href="/#open">Export &amp; data</a>
+        <a href="/#open">License (MIT)</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="/support">Support</a>
+        <a href="/privacypolicy">Privacy</a>
+        <a href="#">Press kit</a>
+        <a href="mailto:contact@huskynotes.com">Contact</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Husky Notes. Built with 🐺 in SwiftUI. Designed &amp; built by <a href="https://cn-design.co.uk" target="_blank" rel="noopener">CN-DESIGN LTD</a>.</span>
+      <span class="footer__legal"><a href="/privacypolicy">Privacy</a> · <a href="#">Terms</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
